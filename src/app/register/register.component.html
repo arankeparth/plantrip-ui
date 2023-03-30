@@ -1,0 +1,30 @@
+<div class="fcontainer">
+    <div class="logo-box">
+        <h1 class="heading">Plan your next trip</h1>
+        <h1 class="logo">PlanTrip.com</h1>
+        <h1 class="heading">Get the best discounts and offers for the summer seasson! </h1>
+        <button class="auth-butt" id="trip-butt">See all the trips</button>
+        <button class="auth-butt" id="disc-butt">See all the schemes</button>
+    </div>
+    <div class = 'main-box'>
+        <form>
+            <div class='input-box'>
+                <br>
+                <input type="email" [class]="emailBorderClass" name="" id="email" placeholder="Email" (input)="onUpdateEmail($event)" 
+                (mouseenter)="onHoverEmail($event, 0)" (mouseleave)="onHoverEmail($event, 1)">
+                <input type="password" [class]="PassBorderClass" name="" id="passwd"  placeholder="Password" (input)="onUpdatePass($event)">
+                <input type="password" [class]="PassBorderClass" name="" id="cpasswd"  placeholder="Confirm Password" (input)="onUpdateCPass($event)">
+                <br>
+            </div>
+            <div class="links">
+                <a routerLink = "/login" id="new">Existing user login</a>
+            </div>
+            <button class="auth-butt">Register</button>
+            <div class="line"></div>
+            <div class="alt-box">
+                <div class="alt" id="google" ><a id="google-login-link">continue with google</a></div>
+                <div class="alt" id="fb">continue with facebook</div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="fcontainer">
+    <div class="logo-box">
+        <h1 class="heading">Plan your next trip</h1>
+        <h1 class="logo">PlanTrip.com</h1>
+        <h1 class="heading" id="disc">Get the best discounts and offers for the summer seasson! </h1>
+        <button class="auth-butt" id="trip-butt">See all the trips</button>
+        <button class="auth-butt" id="disc-butt">See all the schemes</button>
+    </div>
+    <div class = 'main-box'>
+        <form>
+            <div class="error-box">
+                <h4></h4>
+            </div>
+            <div class='input-box'>
+                <br>
+                <input type="email" name="" id="email" placeholder="Email"
+               (input)="onUpdateEmail($event)" [class]="emailBorderClass">
+                <input type="password" name="" id="passw"  placeholder="Password"
+                (input)="onUpdatePass($event)" [class]="passBorderClass">
+                <br>
+            </div>
+            <div class="links">
+                <a href="#" id="pass">Forgot Password</a>
+                <a routerLink = "/register" id="new">New user registrtion</a>
+            </div>
+            <button [class]="buttClass">Login</button>
+            <div class="line"></div>
+            <div>
+                <div class="alt" id="google" (click)="loginWithGoogle()">google login</div>
+                <div class="alt" id="fb">facebook login</div>
+            </div>
+        </form>
+    </div>
+</div>

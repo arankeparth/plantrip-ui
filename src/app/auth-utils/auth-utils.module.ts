@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ],
+})
+export class AuthUtilsModule { 
+  
+  isValidEmail(email:string) {
+    const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return expression.test(email);
+  }
+
+  isValidPassword(pass:string) {
+
+  }
+}
