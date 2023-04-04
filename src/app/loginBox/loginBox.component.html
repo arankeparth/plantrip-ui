@@ -1,12 +1,22 @@
 <div class="fcontainer">
-    <div class="logo-box">
-        <h1 class="heading">Plan your next trip</h1>
+    <div class="logo-box" [style]="logoStyle">
+        <div class="nav-bar">
+            <div class="auth-box" >
+                <button class="auth-butt2"  (click)="showLogin()" >login</button>
+                <button class="auth-butt2" > All plans</button>
+            </div>
+        </div>
         <h1 class="logo">PlanTrip.com</h1>
         <h1 class="heading" id="disc">Get the best discounts and offers for the summer seasson! </h1>
-        <button class="auth-butt" id="trip-butt">See all the trips</button>
-        <button class="auth-butt" id="disc-butt">See all the schemes</button>
+        <div class="trip-box">
+            <button class="auth-butt" id="trip-butt">See all the trips</button>
+            <button class="auth-butt" id="disc-butt">See all the schemes</button>
+        </div>
     </div>
-    <div class = 'main-box'>
+    <div class = 'main-box' [style]="loginStyle">
+        <div class="auth-butt" id="cancelbutt" [style]="loginStyle_cancel_butt" (click)="onCancel()">
+            <div class="cross"></div>
+        </div> 
         <form>
             <div class="error-box">
                 <h4></h4>
@@ -21,9 +31,9 @@
             </div>
             <div class="links">
                 <a href="#" id="pass">Forgot Password</a>
-                <a routerLink = "/register" id="new">New user registrtion</a>
+                <a routerLink = "/register" id="reg" (click)="showRegister()">New user registrtion</a>
             </div>
-            <button [class]="buttClass">Login</button>
+            <button [class]="buttClass" id="loginButt">Login</button>
             <div class="line"></div>
             <div>
                 <div class="alt" id="google" (click)="loginWithGoogle()">google login</div>

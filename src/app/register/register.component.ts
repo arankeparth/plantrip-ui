@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import {  AuthUtilsModule } from "../auth-utils/auth-utils.module";
+import { Component, HostListener } from '@angular/core';
+import { AuthUtilsModule } from "../auth-utils/auth-utils.module";
 
 @Component({
   selector: 'register-form',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['../loginBox/loginBox.component.scss'],
 })
+
 export class RegisterComponent {
   emailError = ""
   passError = ""
@@ -13,10 +14,22 @@ export class RegisterComponent {
   cPass = ""
   email = ""
   emailBorderClass = ""
-  authUtils : AuthUtilsModule = new AuthUtilsModule
+  authUtils: AuthUtilsModule = new AuthUtilsModule
   PassBorderClass = ""
-  
-  onUpdatePass(event:Event) {
+  loginStyle_cancel_butt = ""
+  getScreenWidth = 0
+  loginLink = ""
+  ngOnInit() {
+    this.getScreenWidth = window.innerWidth;
+    if (this.getScreenWidth >= 1098) {
+      this.loginStyle_cancel_butt = "visibility: hidden"
+      this.loginLink = "/login"
+    }  else {
+      this.loginStyle_cancel_butt = "visibility: visible"
+      this.loginLink = "/login/1"
+    }
+  }
+  onUpdatePass(event: Event) {
     this.pass = (<HTMLInputElement>event.target).value
     if (this.pass != this.cPass) {
       this.PassBorderClass = "red-border";
@@ -31,7 +44,7 @@ export class RegisterComponent {
     }
   }
 
-  onUpdateCPass(event:Event) {
+  onUpdateCPass(event: Event) {
     this.cPass = (<HTMLInputElement>event.target).value
     if (this.pass != this.cPass) {
       this.PassBorderClass = "red-border";
@@ -46,24 +59,40 @@ export class RegisterComponent {
     }
   }
 
-  onUpdateEmail(event:Event) {
+  onUpdateEmail(event: Event) {
     this.email = (<HTMLInputElement>event.target).value;
-        const ve = this.authUtils.isValidEmail(this.email)
-        if (ve) {
-            this.emailBorderClass = "green-border";
-            this.emailError = ""
-        } else if (!ve && this.email != "") {
-            this.emailBorderClass = "red-border";
-            this.emailError = "Invalid email id"
-        } else {
-            this.emailBorderClass = "";
-            this.emailError = ""
-        }
+    const ve = this.authUtils.isValidEmail(this.email)
+    if (ve) {
+      this.emailBorderClass = "green-border";
+      this.emailError = ""
+    } else if (!ve && this.email != "") {
+      this.emailBorderClass = "red-border";
+      this.emailError = "Invalid email id"
+    } else {
+      this.emailBorderClass = "";
+      this.emailError = ""
+    }
   }
 
-  onHoverEmail(event:Event, eventCode:number) {
+  onHoverEmail(event: Event, eventCode: number) {
     if (eventCode == 0) {
-      
+
+    }
+  }
+
+  onCancel() {
+    this.loginStyle_cancel_butt = "visibility: hidden"
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.getScreenWidth = window.innerWidth;
+    if (this.getScreenWidth >= 1098) {
+      this.loginStyle_cancel_butt = "visibility: hidden"
+      this.loginLink = "/login"
+    }  else {
+      this.loginStyle_cancel_butt = "visibility: visible"
+      this.loginLink = "['/login', 1]"
     }
   }
 

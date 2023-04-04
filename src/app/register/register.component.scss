@@ -8,7 +8,6 @@
     background-color: rgba(104, 166, 194, 0.459);
 }
 
-
 .logo-box {
     position: absolute;
     width: 70%;
@@ -41,14 +40,13 @@
     display: flex;
     flex-direction: column;
     background-size: cover;
-    background-image: linear-gradient(180deg, rgba(1, 14, 13, 0.6) 0%, rgba(10, 57, 68, 0.6) 100%), url("../../assets/mountains-winter-daytime-glacier-blue-mountain-range-5k-6000x3376-1248.jpg");
+    background-image: linear-gradient(180deg, rgba(1, 14, 13, 0.6) 0%, rgba(10, 57, 68, 0.6) 100%), url("C:\Users\Hp\Desktop\angular-app2\src\assets\download.jpg");
 }
 
-.error-box {
-    text-align: center;
-    color: rgb(156, 50, 50);
-    height: 0rem;
+h4 {
+    margin: 0;
 }
+
 form {
     text-align: center;
     height: 23rem;
@@ -116,17 +114,24 @@ input {
     font-size: 18px;
 }
 
+#email {
+    margin-top : 0rem;
+}
+
+.error-box {
+    text-align: center;
+    padding-top: 1rem;
+    color: rgb(156, 50, 50);
+    height: 1rem;
+}
+
 input:first-child {
     margin-top: 1rem;
 }
 
 .input-box {
-    padding-top: 0;
-}
-
-h4 {
-    margin: 0;
-    transition: all 0.5s;
+    margin-top: 0;
+    z-index: 0;
 }
 
 #pass {
@@ -151,7 +156,7 @@ a {
 }
 
 a:hover {
-    color: rgb(100, 145, 228);
+    color: rgb(12, 60, 148);
 }
  .line {
     height: 0.5px;
@@ -180,7 +185,6 @@ a:hover {
 
  #fb {
     transition: all 0.15s;
-    margin-bottom: 1rem;
     background-color: rgb(50, 50, 217);
  }
 
@@ -199,6 +203,7 @@ a:hover {
     scale: 1.02;
  }
 
+ 
  .red-border {
     border-bottom: 2px double #ed341bdb;
     box-shadow: 0px 18px 20px -9px #ed341bdb;
@@ -208,17 +213,21 @@ a:hover {
     border-bottom: 2px double #1bf142;
  }
  
-#email {
-    margin-top: 0rem;
-}
+ #google-login-link:hover {
+    color: azure;
+ }
 
-#trip-butt {
+ .alt-box {
+    height: fit-content;
+ }
+
+ #trip-butt {
     font-size: 30px;
     height: 3rem;
     margin-top: 2rem;
     border-radius: 100px;
     background-color: rgb(231, 158, 23);
-    color: azure
+    color: azure;
  }
 
  #disc-butt {
@@ -231,7 +240,72 @@ a:hover {
     margin-left: 0;
  }
 
-
-.heading {
+ .heading {
     color: rgba(240, 255, 255, 0.458);
  }
+
+ @media only screen and (max-width: 1381px) {
+	input {
+		width: 16rem;
+	}
+	form {
+		width: 20rem;
+	}
+	#loginButt {
+		width: 16rem;
+	}
+	.alt {
+		width: 16rem;
+	}
+	#disc-butt {
+		margin-left: 2rem;
+	}
+}
+
+@media only screen and (max-width: 1097px) {
+	.main-box {
+		width: 100%;
+		height: 100%;
+		background: none;
+		flex-flow: row wrap;
+		flex-grow: 1;
+		transition: all 0s;
+        background-color: grey;
+        opacity: 1;
+	} 
+	.auth-butt {
+		transition: all 0s;
+	}
+	input {
+		transition: all 0s;
+	}
+	#pass {
+		transition: all 0s;
+	}
+	#new {
+		visibility: hidden;
+	}
+    #new_alter {
+        transition: all 0s;
+        visibility: visible;
+    }
+	#loginButt {
+		transition: all 0s;
+	}
+	#google {
+		transition: all 0s;
+	}
+	#fb {
+		transition: all 0s;
+	}
+	.logo-box {
+		width: 100%;
+		height: 100%;
+		flex-flow: row wrap;
+		flex-grow: 1;
+	}
+	.auth-butt2 {
+		visibility: visible;
+	}
+
+}

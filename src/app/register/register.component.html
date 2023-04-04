@@ -1,28 +1,38 @@
 <div class="fcontainer">
     <div class="logo-box">
-        <h1 class="heading">Plan your next trip</h1>
+        <div class="nav-bar">
+            <div class="auth-box" >
+                <!-- Change class names -->
+                <button class="auth-butt2">login</button>
+                <button class="auth-butt2"> All plans</button>
+            </div>
+        </div>
         <h1 class="logo">PlanTrip.com</h1>
-        <h1 class="heading">Get the best discounts and offers for the summer seasson! </h1>
+        <h1 class="heading" id="disc">Get the best discounts and offers for the summer seasson! </h1>
         <button class="auth-butt" id="trip-butt">See all the trips</button>
         <button class="auth-butt" id="disc-butt">See all the schemes</button>
     </div>
-    <div class = 'main-box'>
+    <div class = 'main-box' id="register-box">
+        <a class="auth-butt" [routerLink] = "['/login', 1]" id="cancelbutt" [style]="loginStyle_cancel_butt" (click)="onCancel()">
+            <div class="cross"></div>
+        </a> 
         <form>
             <div class='input-box'>
                 <br>
                 <input type="email" [class]="emailBorderClass" name="" id="email" placeholder="Email" (input)="onUpdateEmail($event)" 
                 (mouseenter)="onHoverEmail($event, 0)" (mouseleave)="onHoverEmail($event, 1)">
                 <input type="password" [class]="PassBorderClass" name="" id="passwd"  placeholder="Password" (input)="onUpdatePass($event)">
-                <input type="password" [class]="PassBorderClass" name="" id="cpasswd"  placeholder="Confirm Password" (input)="onUpdateCPass($event)">
+                <input type="password" [class]="PassBorderClass" name="" id="cpasswd"  placeholder="Confirm Password" (input)="onUpdateCPass($event)" style="margin-bottom: 0rem;">
                 <br>
             </div>
             <div class="links">
-                <a routerLink = "/login" id="new">Existing user login</a>
+                <!-- <a [routerLink] = "['/login', 1]" id="new_alter" style="margin-left: 8.5rem;">Existing user login</a> -->
+                <a [routerLink] = "loginLink" id="new"  style="margin-top: 0rem;">Existing user login</a>
             </div>
-            <button class="auth-butt">Register</button>
+            <button class="auth-butt" id="loginButt">Register</button>
             <div class="line"></div>
             <div class="alt-box">
-                <div class="alt" id="google" ><a id="google-login-link">continue with google</a></div>
+                <div class="alt" id="google">google login</div>
                 <div class="alt" id="fb">continue with facebook</div>
             </div>
         </form>

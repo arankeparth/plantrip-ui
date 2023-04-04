@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router'
 import { AuthUtilsModule } from './auth-utils/auth-utils.module';
 const routes: Routes = [
+  { path: 'login/:visible', component: LoginBoxComponent},
   { path: 'login', component: LoginBoxComponent},
   { path: 'register', component: RegisterComponent},
 ]
