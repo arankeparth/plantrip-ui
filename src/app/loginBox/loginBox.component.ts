@@ -22,7 +22,7 @@ export class LoginBoxComponent {
     logoStyle = "visibility: visible;"
     loginStyle_cancel_butt = ""
     loginFlag = false
-    
+    navStyle = ""
 
     constructor(private route: ActivatedRoute) {}
     ngOnInit() {
@@ -32,8 +32,10 @@ export class LoginBoxComponent {
             this.loginFlag = false
         } else if(this.allowLogin == "1") {
             this.loginFlag = true
-            this.loginStyle = "visibility: visible; opacity: 1; background-image: linear-gradient(180deg, rgba(1, 14, 13, 0.6) 0%, rgba(10, 57, 68, 0.6) 100%), url(../../assets/mountains-winter-daytime-glacier-blue-mountain-range-5k-6000x3376-1248.jpg); background-size:cover"
+            this.loginStyle = "visibility: visible;"
             this.loginStyle_cancel_butt = "visibility: visible"
+            this.logoStyle = "visibility: hidden"
+            this.navStyle = "visibility:hidden"
         }
     }
 
@@ -62,14 +64,18 @@ export class LoginBoxComponent {
 
     showLogin() {
         this.loginFlag = true
-        this.loginStyle = "visibility: visible; opacity: 1; background-image: linear-gradient(180deg, rgba(1, 14, 13, 0.6) 0%, rgba(10, 57, 68, 0.6) 100%), url(../../assets/mountains-winter-daytime-glacier-blue-mountain-range-5k-6000x3376-1248.jpg); background-size:cover"
+        this.loginStyle = "visibility: visible;"
         this.loginStyle_cancel_butt = "visibility: visible"
+        this.logoStyle = "visibility: hidden;"
+        this.navStyle = "visibility: hidden;"
     }
 
     onCancel() {
         this.loginFlag = false
         this.loginStyle = "visibility: hidden;"
         this.loginStyle_cancel_butt = "visibility: hidden"
+        this.logoStyle = "visibility: visible"
+        this.navStyle = "visibility: visible"
     }
 
     showRegister() {
@@ -84,12 +90,18 @@ export class LoginBoxComponent {
       if (this.getScreenWidth >= 1098) {
         this.loginStyle = "visibility: visible"
         this.loginStyle_cancel_butt = "visibility: hidden"
+        this.navStyle = "visibility: hidden"
+        this.logoStyle = "visibility: visible"
       } else if(!this.loginFlag){
         this.loginStyle = "visibility: hidden;"
         this.loginStyle_cancel_butt = "visibility: hidden"
+        this.navStyle = "visibility: visible"
+        this.logoStyle = "visibility: visible"
       } else {
-        this.loginStyle = "visibility: visible; opacity: 1; background-image: linear-gradient(180deg, rgba(1, 14, 13, 0.6) 0%, rgba(10, 57, 68, 0.6) 100%), url(../../assets/mountains-winter-daytime-glacier-blue-mountain-range-5k-6000x3376-1248.jpg); background-size:cover"
+        this.loginStyle = "visibility: visible"
         this.loginStyle_cancel_butt = "visibility: visible"
+        this.navStyle = "visibility: hidden"
+        this.logoStyle = "visibility: hidden"
       }
     }
 }

@@ -1,0 +1,227 @@
+@import url(animation.scss);
+@import "./../../params/colors.scss";
+@import "./../../params/backgroundColors.scss";
+@import "./../../params/fonts.scss";
+.slide {
+    height: 30rem;
+    width: 100%;
+    flex-basis: 100%;
+    animation-name: bgChange;
+    animation-duration: 1s;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height:inherit;
+}
+
+.slide-container {
+    position: relative;
+    height: 100%;
+}
+
+#s1 {
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(60, 55, 156, 0.718) 0%, rgba(154, 154, 225, 0.255) 50%, rgba(60, 55, 156, 0.988) 100%) 
+    ,url('../../assets/1093978 (1).jpg');
+    animation-name: bgChange;
+    animation-duration: 1.5s;
+}
+
+#s2 {
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(60, 55, 156, 0.718) 0%, rgba(154, 154, 225, 0.255) 50%, rgba(60, 55, 156, 0.988) 100%) 
+    ,url('../../assets/Italy-Wallpaper-03-2048x1365-1.jpg');
+    animation-name: bgChange;
+    animation-duration: 1.5s;
+}
+
+#s3 {
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(60, 55, 156, 0.718) 0%, rgba(154, 154, 225, 0.255) 50%, rgba(60, 55, 156, 0.988) 100%) 
+    ,url('../../assets/mountains-winter-daytime-glacier-blue-mountain-range-5k-6000x3376-1248.jpg');
+    animation-name: bgChange;
+    animation-duration: 1.5s; 
+}
+
+#s4 {
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(60, 55, 156, 0.718) 0%, rgba(154, 154, 225, 0.255) 50%, rgba(60, 55, 156, 0.988) 100%) 
+    ,url('../../assets/2714802.jpg');
+    animation-name: bgChange;
+    animation-duration: 1.5s; 
+}
+
+#s5 {
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(60, 55, 156, 0.718) 0%, rgba(154, 154, 225, 0.255) 50%, rgba(60, 55, 156, 0.988) 100%) 
+    ,url('../../assets/222675.jpg');
+    animation-name: bgChange;
+    animation-duration: 1.5s; 
+}
+
+.nav-bar {
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 0;
+}
+
+.logo {
+    width: fit-content;
+    padding: auto;
+    text-align: center;
+    height: 100%;
+    justify-self: start;
+    color: azure;
+    // animation-name: logoIntro;
+    // animation-duration: 1s;
+}
+
+@media only screen and (max-width: 1052px) {
+    .logo {
+        margin: auto;
+    }
+    .nav-bar {
+        flex-direction: column;
+    }
+}
+
+#heading_logo {
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    font-size: 3rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.options {
+    width: fit-content;
+    margin:1rem;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: lightgrey;
+    transition: all 0.2s;
+    &:hover {
+        scale: 1.2;
+        color: azure;
+    }
+}
+
+.slide-show {
+    opacity: 1;
+    transition: background-image 2s;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    z-index: -2;
+    justify-content: space-between;
+    box-shadow: 10px 10px 22px -9px gray;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+}
+
+.dot {
+    height: 6px;
+    border-radius: 3px;
+    width: 14px;
+    margin: 1rem;
+    background-color: azure;
+    animation-name: bgChange;
+    animation-duration: 2s;
+}
+
+#next {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0;
+    width: 0;
+    border-radius: 2px;
+    border-width: 14px;
+    border-top-width: 5px;
+    border-bottom-width: 5px ;
+    border-color: azure;
+    border-style: solid;
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    transition: all 0.2s;
+    &:hover {
+        cursor: pointer;
+        scale: 1.2;
+    }
+}
+
+#prev {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0;
+    width: 0;
+    border-radius: 2px;
+    border-width: 14px;
+    border-top-width: 5px;
+    border-bottom-width: 5px ;
+    border-color: azure;
+    border-style: solid;
+    border-left-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    transition: all 0.2s;
+    &:hover {
+        cursor: pointer;
+        scale: 1.2;
+    }
+}
+
+.faded-dot {
+    height: 4px;
+    border-radius: 3px;
+    width: 14px;
+    margin: 1rem;
+    background-color: azure;
+    opacity: 0.3;
+}
+
+.auth-butt {
+	opacity: 1;
+    padding: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+	width: fit-content;
+    margin-left: 2vw;
+    text-align: center;
+	font-family: $font-family_1;
+	font-size: 18px;
+	height: fit-content;
+	border: none;
+    background-color: $background-color_orange;
+	border-radius: .3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: azure;
+    transition: all 0.2s; 
+	&:hover {
+		cursor: pointer;
+		box-shadow: 10px 10px 22px -9px gray;
+        background-color: rgb(255, 72, 0);
+		scale: 1.02;
+	}
+}
+

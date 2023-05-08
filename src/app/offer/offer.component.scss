@@ -1,0 +1,47 @@
+@import "./../../params/colors.scss";
+@import "./../../params/backgroundColors.scss";
+@import "./../../params/fonts.scss";
+button {
+    opacity: 1;
+    padding: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+	width: 100%;
+    text-align: center;
+	font-family: $font-family_1;
+	font-size: 18px;
+	height: fit-content;
+	border: none;
+    background-color: $background-color_orange;
+	border-radius: .3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: azure;
+    transition: all 0.2s; 
+	&:hover {
+		cursor: pointer;
+		box-shadow: 10px 10px 22px -9px gray;
+		scale: 1.02;
+	} 
+    position: relative;
+    bottom: 0;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 0;
+    color: azure;
+}
+
+.desc {
+    font-weight: 100;
+    text-align: center;
+    color: azure;
+}
+
+.offer-core {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}

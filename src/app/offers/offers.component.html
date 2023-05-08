@@ -1,0 +1,23 @@
+<div class="offers">
+    <div class="title-bar">
+        <h1 id="title">Offers</h1>
+        <div class="filters">
+        </div>
+        <a href="" class="see-offers">See all the offers</a>
+    </div>
+    <button class="offer-show" id="prev-offer"  (click)="prevOffer()" [disabled]="prevOfferDisabled">
+        <i class="fa-solid fa-arrow-left fa-xl"></i>
+     </button>
+     <button class="offer-show" id="next-offer" (click)="nextOffer()" [disabled]="nextOfferDisabled">
+        <i class="fa-solid fa-arrow-right fa-xl"></i>
+     </button>
+    <div class="offers-frame">
+        <div class="offers-box" [style]="offerStyle">
+        <div class="offer">
+            <app-offer></app-offer>
+        </div>
+        <div *ngFor="let offer of offers">
+            <app-offer [data]="offer"></app-offer>
+        </div>
+    </div></div>
+</div>

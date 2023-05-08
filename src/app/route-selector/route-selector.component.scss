@@ -1,0 +1,121 @@
+@import "./../../params/backgroundColors.scss";
+@import "./../../params/fonts.scss";
+
+* {
+    font-size: 1.6vw;
+}
+
+.Selector {
+    background-color: rgba(128, 128, 128, 0.282);
+    min-height: 13rem;
+    width: calc(100%);
+    background-size: contain;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-selector {
+    margin: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+input {
+    height: 3rem;
+    width: 20vw;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: $font-family_1;
+    color: gray;
+    border: solid 2px rgba(255, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: salmon;
+    transition: all 0.2s;
+    &:focus {
+        border-color: $background-color_orange;
+    }
+}
+
+.rev-butt {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    opacity: 1;
+    transition: scale 0.1s;
+    background-color: $background-color_blue;
+    &:hover {
+        scale: 1.1;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.go-butt {
+    width: 4rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: scale 0.2s;
+    &:hover {
+        scale: 1.1;
+    } 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: $background-color_orange;
+    color: azure;
+}
+
+.fa-solid {
+    font-family: initial;
+    color: gray;
+    z-index: 1000;
+}
+
+
+.material-symbols-outlined {
+  font-size: 30px;
+  color: azure;
+  position: relative;
+  margin-top: 5px;
+}
+
+@media all and (max-width: 1052px) {
+    .Selector {
+        flex-direction: column;
+    }
+	.form-selector {
+        flex-direction: column;
+    }
+    input {
+        width: 60%;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .rev-butt {
+        transform: rotate(90deg);
+        margin-bottom: 1rem;
+    }
+
+    .go-butt {
+        width: 62%;
+    }
+}
+
+@media all and (max-width: 725px) {
+    input {
+        width: 90%;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .go-butt {
+        font-size: 1rem;
+        width: 92%;
+    }
+}

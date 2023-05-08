@@ -1,0 +1,7 @@
+<div class="selector">
+    <button class="selector-butt" [ngClass]="{'activated': isBusSelected()}" (click)="onSelectBus()">
+        <span class="fa-solid fa-bus-simple fa-xl" id="bus">
+        </span></button>
+    <button class="selector-butt" [ngClass]="{'activated': isTrainSelected()}" (click)="onSelectTrain()"><span class="fa-solid fa-train fa-xl" id="train"></span></button>
+    <button class="selector-butt" [ngClass]="{'activated': isPlaneSelected()}" (click)="onSelectPlane()"><span class="fa-solid fa-plane-up fa-xl" id="plane"></span></button>
+</div>

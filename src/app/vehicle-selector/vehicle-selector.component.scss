@@ -1,0 +1,58 @@
+@import "./../../params/backgroundColors.scss";
+
+.selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.selector-butt {
+    transition: all 0.2s;
+    width: 4rem;
+    flex: 1;
+    border-width: 0;
+    opacity: 0.953;
+    border-color: rgba(128, 128, 128, 0.399);
+    background-color: rgba(158, 235, 254);
+    border-right: solid 2px rgba(255, 255, 255, 0);
+   &:hover {
+        cursor: pointer;
+        background-color: rgb(89, 164, 250);
+    }
+}
+
+.fa-solid {
+    color: $background-color_blue-dark;
+}
+
+@media all and (max-width: 1052px) {
+    .selector{
+        margin: auto;
+        height: 3rem;
+        width: 50%;
+        flex-direction: row;
+        border-bottom-left-radius: 2rem;
+    }
+
+    .selector-butt {
+        height: 3rem;
+        width: 100%;
+        
+    }
+
+    .selector-butt:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    .selector-butt:last-child {
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.activated {
+    background-color: rgb(89, 164, 250);
+}
