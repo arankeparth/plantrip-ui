@@ -1,6 +1,13 @@
-# AngularApp2
+# Plantrip.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+
+# Important points
+
+I used chat-gpt to get the boiler-plate code of some components to enhance the speed of the development.
+Appropriate use of angular directives such as ngFor, ngClass, ngStyle and ngIf.
+Responsive design to suit any device.
+
 
 ## Development server
 
@@ -25,3 +32,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
