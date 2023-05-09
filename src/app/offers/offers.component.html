@@ -13,11 +13,10 @@
      </button>
     <div class="offers-frame">
         <div class="offers-box" [style]="offerStyle">
-        <div class="offer">
-            <app-offer></app-offer>
-        </div>
-        <div *ngFor="let offer of offers">
-            <app-offer [data]="offer"></app-offer>
+        <div *ngFor="let offer of offers; let i=index">
+            <div [ngClass]="{'offer-last' : i == nOffers-1, 'offer': i != nOffers-1}">
+                <app-offer [data]="offer"></app-offer>
+            </div>
         </div>
     </div></div>
 </div>

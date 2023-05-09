@@ -17,7 +17,6 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { RouteSelectorComponent } from './route-selector/route-selector.component';
 import { VehicleSelectorComponent } from './vehicle-selector/vehicle-selector.component';
 import { OfferComponent } from './offer/offer.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 const routes: Routes = [
   { path: 'login/:visible', component: LoginBoxComponent},
   { path: 'login', component: LoginBoxComponent},
@@ -45,8 +44,7 @@ const routes: Routes = [
     SocialLoginModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    AuthUtilsModule,
-    SlickCarouselModule
+    AuthUtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

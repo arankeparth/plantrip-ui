@@ -12,9 +12,9 @@ export class OffersComponent {
   nextOfferDisabled = false
   nVisibleOffers = 0
   offersWindowWidth = 96 //in pixel
-  offerWidth = 15.4 // in rem
+  offerWidth = 15 // in rem
   pixel = 16 // pixel equivalent of 1 rem 
-  offerMargin = 1
+  offerMargin = 1 // in rem
   offerUl = 0
   offers : Offer[] = [
     {title: "50% off", description: "For axis bank credit card users"},

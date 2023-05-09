@@ -1,12 +1,13 @@
 {
-  "name": "angular-app2",
+  "name": "plantrip",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:prod": "node dist/angular-app2/main.f1869ac7dbd7b3ac.js"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "css.gg": "^2.0.0",
-    "ngx-slick-carousel": "^15.0.0",
     "rxjs": "~7.8.0",
     "schematics-scss-migrate": "^2.3.17",
     "tslib": "^2.3.0",

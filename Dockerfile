@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image
-FROM node:14.16-alpine
+FROM node:14.20-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -13,8 +13,7 @@ RUN npm install
 # Copy the rest of the application to the container
 COPY . .
 
-# Build the app
-RUN npm run build --prod
+EXPOSE 4200
 
 # Set the command to run when the container starts
-CMD ["npm", "run", "serve:ssr"]
+CMD ["npm", "run", "start"]
