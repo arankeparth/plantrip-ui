@@ -1,0 +1,20 @@
+<div class="cal">
+    <select name="day" id="day" class="date-comp">
+        <option value="" disabled selected>day</option>
+        <option *ngFor="let day of days" [selected]="daySelected">
+            {{ day }}
+        </option>
+    </select>
+    <select name="day" id="month" class="date-comp">
+        <option value="" disabled selected>month</option>
+        <option *ngFor="let month of months" [selected]="monthSelected">
+            {{ month }}
+        </option>
+    </select>
+    <select name="day" id="year" class="date-comp">
+        <option value="" disabled selected>year</option>
+        <option *ngFor="let year of years" [selected]="yearSelected">
+            {{ year }}
+        </option>
+    </select>
+</div>

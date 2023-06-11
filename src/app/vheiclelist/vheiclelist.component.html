@@ -1,0 +1,27 @@
+<div class="pop-up" [ngStyle]="{'opacity': showPopup ? '1' : '0', 'visibility': showPopup ? '':'hidden'}">
+    <div class="list">
+        <div class="box">
+            <div class="schedule-box" *ngFor="let schedule of schedules">
+                <div class="timing">
+                    <h2>
+                    {{ schedule.timing }}
+                    </h2>
+                </div>
+                <div class="info">
+                    <h2>
+                        {{ schedule.company }}
+                    </h2>
+                    <h4>
+                        {{ schedule.busName }}
+                    </h4>
+                </div>
+                <h2 id="price">
+                    {{ schedule.price }}
+                </h2>
+                <button class="book-bttn">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,21 @@
 <div class="Selector">
-    <app-vehicle-selector></app-vehicle-selector>
+    <app-vehicle-selector (selectEventEmitter)="onSelectMode($event)"></app-vehicle-selector>
     <div class="form-selector">
-        <input type="text" placeholder="from">
-        <button class="rev-butt"><span class="material-symbols-outlined">
-            sync_alt
-            </span></button>
-        <input type="text" placeholder="to">
-        <input type="text"placeholder="date">
-        <button class="go-butt">Go</button>
+        <select [(ngModel)]="selectedFromCity">
+            <option value="" disabled selected>from</option>
+            <option *ngFor="let stop of stops" [value]="stop">{{ stop }}</option>
+        </select>
+        <button class="rev-butt" (click)="onReverse()"><span class="material-symbols-outlined">
+            sync_alt</span></button>
+        <select [(ngModel)]="selectedToCity">
+            <option value="" disabled selected>to</option>
+            <option *ngFor="let stop of stops" [value]="stop">{{ stop }}</option>              
+        </select>
+            <app-calendar></app-calendar>
+        <button class="go-butt" (click)="onShowAvailableBookings()">Go</button>
     </div>
 </div>
+<div class="auth-butt" id="cancelbutt" (click)="onCancelPopup()" *ngIf="showList">
+    <div class="cross"></div>
+</div> 
+<app-vheiclelist [(showPopup)]="showList" ></app-vheiclelist>

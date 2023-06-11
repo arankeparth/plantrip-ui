@@ -2,7 +2,7 @@
 @import "./../../params/fonts.scss";
 
 * {
-    font-size: 1.6vw;
+    font-size: 1.2rem;
 }
 
 .Selector {
@@ -23,7 +23,8 @@
     flex: 1;
 }
 
-input {
+
+input, select, app-calendar {
     height: 3rem;
     width: 20vw;
     border: none;
@@ -77,6 +78,21 @@ input {
     z-index: 1000;
 }
 
+input {
+    height: 2.7rem;
+}
+
+option {
+    border: none;
+    outline: none;
+}
+
+app-calendar {
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+}
 
 .material-symbols-outlined {
   font-size: 30px;
@@ -85,6 +101,64 @@ input {
   margin-top: 5px;
 }
 
+.auth-butt {
+    z-index: 1000000001;
+    position: fixed;
+    scroll-behavior:none;
+    background-color: azure;
+	opacity: 1;
+	font-family: $font-family_1;
+	font-size: 18px;
+	height: 2rem;
+	width: 2rem;
+	top: 0.5rem;
+	right: 0.5rem;
+	border: none;
+	border-radius: 50%;
+	text-align: center;
+    
+	transform-origin: 50% 50%;
+    cursor: pointer;
+    &:hover {
+        scale: 1.08;
+        
+    }
+}
+
+.cross {
+    color: azure;
+	margin: 0;
+	position: absolute;
+	height: 1.2px;
+	width: 1.2rem;
+	top: 1rem;
+	right: 1rem;
+	transform-origin: 50% 50%;
+	opacity: 0.7;
+    
+}
+
+.cross::after, .cross::before {
+    color: azure;
+	position: absolute;
+	margin: 0;
+	height: 1.2px;
+	width: 1.2rem;
+	transform-origin: 50% 50%;
+	content: " ";
+	background-color: $background-color_9;
+}
+
+.cross::after {
+	transform: rotate(45deg);
+}
+
+.cross::before {
+	transform: rotate(-45deg);
+}
+
+
+
 @media all and (max-width: 1052px) {
     .Selector {
         flex-direction: column;
@@ -92,10 +166,14 @@ input {
 	.form-selector {
         flex-direction: column;
     }
-    input {
+    input{
         width: 60%;
         margin-bottom: 1rem;
-        font-size: 1rem;
+    }
+
+    select, app-calendar {
+        width: 62%;
+        margin-bottom: 1rem;
     }
 
     .rev-butt {
@@ -109,13 +187,16 @@ input {
 }
 
 @media all and (max-width: 725px) {
-    input {
+    input{
         width: 90%;
         margin-bottom: 1rem;
-        font-size: 1rem;
+    }
+    select, app-calendar{
+        width: 94%;
+        margin-bottom: 1rem;
     }
     .go-butt {
         font-size: 1rem;
-        width: 92%;
+        width: 94%;
     }
 }

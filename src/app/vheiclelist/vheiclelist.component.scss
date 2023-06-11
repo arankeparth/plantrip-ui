@@ -1,0 +1,167 @@
+@import "./../../params/colors.scss";
+@import "./../../params/backgroundColors.scss";
+@import "./../../params/fonts.scss";
+.book-btn {
+
+}  
+
+
+
+.timing {
+    margin: 0;
+    color: azure;
+    width: fit-content;
+}
+
+h2, h4 {
+    width: fit-content;
+    margin: 0;
+}
+
+.info {
+    color: rgb(202, 202, 202);
+}
+
+
+.schedule-box {
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(40, 17, 189);
+    border-radius: 10px;
+    flex-direction: row;
+}
+
+.box {
+    padding: 5px;
+    padding-top: 5px;
+    width: 60vw;
+    height: 60vh;
+    -webkit-box-shadow: 0px 0px 22px 0px rgb(68, 68, 68);
+    -moz-box-shadow: 0px 0px 22px 0px rgb(68, 68, 68);
+    box-shadow: 0px 0px 22px 0px rgb(68, 68, 68);
+    border-radius: 10px;
+    background-color: rgba(71, 134, 205);
+    position: fixed;
+    top: 50%;
+    overflow: scroll;
+    scroll-behavior: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      
+}
+
+
+
+
+.auth-butt {
+    background-color: azure;
+	opacity: 1;
+	font-family: $font-family_1;
+	font-size: 18px;
+    position: absolute;
+	height: 2rem;
+	width: 2rem;
+	top: 0.5rem;
+	right: 0.5rem;
+	border: none;
+	border-radius: 50%;
+	text-align: center;
+    
+	transform-origin: 50% 50%;
+    cursor: pointer;
+    &:hover {
+        scale: 1.08;
+        
+    }
+}
+
+.cross {
+    color: azure;
+	margin: 0;
+	position: absolute;
+	height: 1.2px;
+	width: 1.2rem;
+	top: 1rem;
+	right: 1rem;
+	transform-origin: 50% 50%;
+	opacity: 0.7;
+    
+}
+
+.cross::after, .cross::before {
+    color: azure;
+	position: absolute;
+	margin: 0;
+	height: 1.2px;
+	width: 1.2rem;
+	transform-origin: 50% 50%;
+	content: " ";
+	background-color: $background-color_9;
+}
+
+.cross::after {
+	transform: rotate(45deg);
+}
+
+.cross::before {
+	transform: rotate(-45deg);
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    padding: 100000px;
+    z-index: 1000000000;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.804);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    height: fit-content;
+    width: 60%;
+}
+
+.pop-up {
+    transition:opacity 0.3s;
+    z-index: 1000000000;
+    background-color: rgba(0, 255, 255, 0.389)
+}
+
+button {
+    opacity: 1;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    height: 2rem;
+    border: none;
+    background-color: $background-color_blue;;
+    border-radius: 0.3rem;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+        scale: 1.2;
+    }
+    color: azure;
+}
+
+#price {
+    color: azure;
+}
+
+@media all and (max-width: 619px)  {
+    .box {
+        width: 100vw;
+    }
+}

@@ -1,4 +1,5 @@
 export interface Offer {
+    customerid: number,
     title: string,
-    description: string
+    desc: string
   }

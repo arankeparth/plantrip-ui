@@ -18,22 +18,20 @@
             <div class="cross"></div>
         </div> 
         <form>
-            <div class="error-box">
-                <h4></h4>
-            </div>
+            <app-error [isError]="IsError" [errorMessage]="error"></app-error>
             <div class='input-box'>
                 <br>
                 <input type="email" name="" id="email" placeholder="Email"
-               (input)="onUpdateEmail($event)" [class]="emailBorderClass">
+               (input)="onUpdateEmail($event)" [class]="emailBorderClass" [(ngModel)]="username" name="username">
                 <input type="password" name="" id="passw"  placeholder="Password"
-                (input)="onUpdatePass($event)" [class]="passBorderClass">
+                (input)="onUpdatePass($event)" [class]="passBorderClass" [(ngModel)]="pass" name="pass">
                 <br>
             </div>
             <div class="links">
                 <a href="#" id="pass">Forgot Password</a>
                 <a routerLink = "/register" id="reg" (click)="showRegister()">New user registrtion</a>
             </div>
-            <button [class]="buttClass" id="loginButt">Login</button>
+            <button [class]="buttClass" id="loginButt" (click)="onClickLogin()">Login</button>
             <div class="line"></div>
             <div>
                 <div class="alt" id="google" (click)="loginWithGoogle()">google login</div>

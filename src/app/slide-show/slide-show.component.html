@@ -1,30 +1,32 @@
-<div class="slide-show" id="s1" *ngIf="visible[0]" (doubleClick)="onNext()">
-    <div class="nav-bar">
-        <div class="logo">
-            <h1 id="heading_logo">PlanTrip.com</h1>
+<div *ngFor="let slide of slides; let index=index">
+    <div class="slide-show" [id]="slide" *ngIf="visible[index]" (doubleClick)="onNext()">
+        <div class="nav-bar">
+            <div class="logo">
+                <h1 id="heading_logo">PlanTrip.com</h1>
+            </div>
+            <div class="options">
+                <a href="">hotels</a>
+                <a href="">trips</a>
+                <button class="auth-butt" (click)="onClickLogOut()">log out</button>
+            </div>
         </div>
-        <div class="options">
-            <a href="">hotels</a>
-            <a href="">trips</a>
-            <button class="auth-butt">log out</button>
+        <div class="slider">
+            <div class="dot" id="prev" (click)="onPrev()"></div>
+            <div class="dot" id="d1" *ngIf="visible[0]"></div>
+            <div class="faded-dot" *ngIf="!visible[0]"></div>
+            <div class="dot" id="d2" *ngIf="visible[1]"></div>
+            <div class="faded-dot" *ngIf="!visible[1]"></div>
+            <div class="dot" id="d3" *ngIf="visible[2]"></div>
+            <div class="faded-dot" *ngIf="!visible[2]"></div>
+            <div class="dot" id="d4" *ngIf="visible[3]"></div>
+            <div class="faded-dot" *ngIf="!visible[3]"></div>
+            <div class="dot" id="d5" *ngIf="visible[4]"></div>
+            <div class="faded-dot" *ngIf="!visible[4]"></div>
+            <div class="dot" id="next" (click)="onNext()"></div>
         </div>
-    </div>
-    <div class="slider">
-        <div class="dot" id="prev" (click)="onPrev()"></div>
-        <div class="dot" id="d1" *ngIf="visible[0]"></div>
-        <div class="faded-dot" *ngIf="!visible[0]"></div>
-        <div class="dot" id="d2" *ngIf="visible[1]"></div>
-        <div class="faded-dot" *ngIf="!visible[1]"></div>
-        <div class="dot" id="d3" *ngIf="visible[2]"></div>
-        <div class="faded-dot" *ngIf="!visible[2]"></div>
-        <div class="dot" id="d4" *ngIf="visible[3]"></div>
-        <div class="faded-dot" *ngIf="!visible[3]"></div>
-        <div class="dot" id="d5" *ngIf="visible[4]"></div>
-        <div class="faded-dot" *ngIf="!visible[4]"></div>
-        <div class="dot" id="next" (click)="onNext()"></div>
     </div>
 </div>
-<div class="slide-show" id="s2" *ngIf="visible[1]" (doubleClick)="onNext()">
+<!-- <div class="slide-show" id="s2" *ngIf="visible[1]" (doubleClick)="onNext()">
     <div class="nav-bar">
         <div class="logo">
             <h1 id="heading_logo">PlanTrip.com</h1>
@@ -127,4 +129,4 @@
         <div class="faded-dot" *ngIf="!visible[4]"></div>
         <div class="dot" id="next" (click)="onNext()"></div>
     </div>
-</div>
+</div> -->

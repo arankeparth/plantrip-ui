@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { AuthUtilsModule } from "../auth-utils/auth-utils.module";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'register-form',
@@ -14,11 +15,12 @@ export class RegisterComponent {
   cPass = ""
   email = ""
   emailBorderClass = ""
-  authUtils: AuthUtilsModule = new AuthUtilsModule
+  authUtils: AuthUtilsModule = new AuthUtilsModule(this.http)
   PassBorderClass = ""
   loginStyle_cancel_butt = ""
   getScreenWidth = 0
   loginLink = ""
+  constructor(private http: HttpClient) {}
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     if (this.getScreenWidth >= 1098) {

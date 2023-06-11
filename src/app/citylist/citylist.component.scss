@@ -1,0 +1,36 @@
+@import "./../../params/fonts.scss";
+@import "./../../params/backgroundColors.scss";
+
+@media all and (max-width: 1052px) {
+    select {
+        width: 60%;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 725px) {
+    select {
+        width: 90%;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+}
+
+input {
+    height: 3rem;
+    width: 20vw;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: $font-family_1;
+    color: gray;
+    border: solid 2px rgba(255, 0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: salmon;
+    transition: all 0.2s;
+    &:focus {
+        border-color: $background-color_orange;
+    }
+}

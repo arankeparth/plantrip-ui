@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
   selector: 'app-vehicle-selector',
@@ -12,7 +12,9 @@ export class VehicleSelectorComponent {
   busSelected = true
   trainSelected = false
   planeSelected = false
-  
+
+ @Output() selectEventEmitter = new EventEmitter<string>();
+
   ngOnInit() {
     
   }
@@ -23,6 +25,7 @@ export class VehicleSelectorComponent {
     this.trainSelected = false
     this.buttStylePlane = ""
     this.planeSelected = false
+    this.selectEventEmitter.emit("bus")
   }
   onSelectTrain() {
     this.buttStyleBus = ""
@@ -30,6 +33,7 @@ export class VehicleSelectorComponent {
     this.trainSelected = true
     this.buttStylePlane = ""
     this.planeSelected = false
+    this.selectEventEmitter.emit("train")
   }
   onSelectPlane() {
     this.buttStyleBus = ""
@@ -37,6 +41,7 @@ export class VehicleSelectorComponent {
     this.buttStyleTrain = ""
     this.trainSelected = false
     this.planeSelected = true
+    this.selectEventEmitter.emit("plane")
   }
 
   isBusSelected() {

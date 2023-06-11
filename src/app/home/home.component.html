@@ -1,9 +1,11 @@
-<app-slide-show></app-slide-show>
-<div class="info">
-    <app-route-selector></app-route-selector>
-    <app-offers></app-offers>
-    <app-reviews></app-reviews>
-</div>
-<footer>
+<div class="home" *ngIf="validToken"> 
+    <app-slide-show></app-slide-show>
+    <div class="info">
+        <app-route-selector></app-route-selector>
+        <app-offers></app-offers>
+        <app-reviews></app-reviews>
+    </div>
+    <footer>
 
-</footer>
+    </footer>
+</div>

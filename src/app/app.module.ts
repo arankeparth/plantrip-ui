@@ -16,7 +16,16 @@ import { SlideShowComponent } from './slide-show/slide-show.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { RouteSelectorComponent } from './route-selector/route-selector.component';
 import { VehicleSelectorComponent } from './vehicle-selector/vehicle-selector.component';
+import { HttpClientModule } from '@angular/common/http'
 import { OfferComponent } from './offer/offer.component';
+import { OffersApi } from './offers/offers.apis';
+import { ErrorComponent } from './error/error.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CitylistComponent } from './citylist/citylist.component';
+import { BusBookingCalendarComponent } from './bus-booking-calendar/bus-booking-calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { VheiclelistComponent } from './vheiclelist/vheiclelist.component';
+
 const routes: Routes = [
   { path: 'login/:visible', component: LoginBoxComponent},
   { path: 'login', component: LoginBoxComponent},
@@ -36,7 +45,12 @@ const routes: Routes = [
     ReviewsComponent,
     RouteSelectorComponent,
     VehicleSelectorComponent,
-    OfferComponent
+    OfferComponent,
+    ErrorComponent,
+    CitylistComponent,
+    BusBookingCalendarComponent,
+    CalendarComponent,
+    VheiclelistComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +58,10 @@ const routes: Routes = [
     SocialLoginModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    AuthUtilsModule
+    AuthUtilsModule,
+    HttpClientModule,
+    OffersApi,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
